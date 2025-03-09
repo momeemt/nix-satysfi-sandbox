@@ -16,7 +16,7 @@ satysfi main.saty
 
 次に、`shell.nix`のコメントアウトを切り替えます
 
-```sh
+```nix
 pkgs.mkShell {
   buildInputs = with pkgs; [
     # (satysfi.override {
