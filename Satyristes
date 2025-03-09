@@ -1,0 +1,11 @@
+(lang "0.0.3")
+
+(doc
+  (name  "main")
+  (build ((make)))
+  (dependencies
+   (;; Standard library
+    dist
+    ;; Third-party library
+    fss
+    )))

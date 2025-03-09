@@ -1,0 +1,16 @@
+# OMake
+*.omc
+.omakedb.lock
+
+# Satyristes
+*.deps
+
+# SATySFi
+*.satysfi-aux
+
+# Generated files
+main.pdf
+
+# Satyrographos
+_build
+

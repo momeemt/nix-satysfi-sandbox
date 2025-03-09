@@ -1,0 +1,17 @@
+% プロジェクト用函数・コマンド定義用ファイル
+@require: code
+@require: math
+
+
+let-block ctx +frame content =
+  let pads = (10pt, 10pt, 10pt, 10pt) in
+  let decoset = VDecoSet.simple-frame-stroke 1pt (Color.gray 0.75) in
+    block-frame-breakable ctx pads decoset (fun ctx -> read-block ctx content)
+
+let-block ctx +display-boxes content code =
+  read-block (ctx |> set-paragraph-margin 12pt 0pt) '<+frame(content);>
+    +++ read-block (ctx |> set-paragraph-margin 0pt 12pt) '<+code(code);>
+
+% 数式コマンドの定義
+let-math \factorial x =
+  ${#x \mathpunct{\mathrm-token!(`!`)}}
